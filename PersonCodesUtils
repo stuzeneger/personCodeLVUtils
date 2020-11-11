@@ -44,7 +44,7 @@ class PersonCodesUtils {
 
     trimPersonCode(personCode) {
         return personCode = personCode.substr(0, this.personCodeDividerPosition)
-            + personCode.substr(this.personCodeDividerPosition + 1, personCode.length);
+            + personCode.substr(this.personCodeDividerPosition, personCode.length);
     }
 
     validLVPersonCodeDate(day, month, year) {
