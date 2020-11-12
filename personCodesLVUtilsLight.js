@@ -31,10 +31,6 @@ var PersonCodesUtils = function (personCode) {
     
     this.outputPersonCode = function (personCode, isLV = false) {
         isLV = !isLV ? validLVPersonCode(personCode) : isLV;
-        if (isLV) {
-            return personCode.substr(0, 6) + '-' + personCode.substr(6, personCode.length);
-        } else {
-            return personCode;
-        }
+        return !isLV ? personCode : personCode.substr(0, 6) + '-' + personCode.substr(6, personCode.length);                   
     }
 }
