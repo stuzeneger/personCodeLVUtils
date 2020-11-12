@@ -2,7 +2,7 @@
 
 class PersonCodesHelper {
 
-    function outputPersonCode($personCode, $isLV = false) {
+    function outputPersonCode(string $personCode, $isLV = false): string {
         $isLV = !$isLV ? $this->validLVPersonCode($personCode) : $isLV;
         if ($isLV) {
             return substr($personCode, 0, 6) . '-' . substr($personCode, 6, strlen($personCode));
