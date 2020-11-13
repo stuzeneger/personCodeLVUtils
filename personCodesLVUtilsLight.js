@@ -1,8 +1,6 @@
-var PersonCodesUtils = function (personCode) {    
+var PersonCodesUtils = function (personCode) {
     this.validLVPersonCode = function (personCode) {
-        if (false === new RegExp('^([0-2][0-9]|(3)[0-1])(((0)[0-9])|((1)[0-2]))\\d{2}(\\-?)\\d{5}$').test(personCode)) {
-            return false;
-        } else {
+        if (new RegExp('^([0-2][0-9]|(3)[0-1])(((0)[0-9])|((1)[0-2]))\\d{2}(\\-?)\\d{5}$').test(personCode)) {
             personCode.charAt(6) === '-' && personCode = personCode.slice(0, 6) + personCode.slice(-5);
             let day = personCode.slice(0, 2),
                 month = personCode.slice(2, 2),
@@ -20,6 +18,8 @@ var PersonCodesUtils = function (personCode) {
                 return false;
             }
             return true;
+        } else {
+            return false;
         }
     }
 
