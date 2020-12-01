@@ -25,7 +25,7 @@ def validLVPersonCodePattern(personCode):
     
 def trimLVPersonCode(personCode):
     if personCode[6] == '-':
-            personCode = personCode[0:6] + personCode[7:]
+        personCode = personCode[0:6] + personCode[7:]
     return personCode        
     
 def validLVPersonCodeDate(day, month, year):   
